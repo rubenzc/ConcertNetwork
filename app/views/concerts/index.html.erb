@@ -1,0 +1,12 @@
+<ul>
+  <% @concert.each do |entry| %>
+    <li>
+      <h1><%= entry.artist %></h1>
+        Venue: <%= entry.venue %>
+        City: <%= entry.city %>m
+        Date: <%= entry.date.to_date %>
+        Price: <%= entry.price %>
+        Description: <%= entry.description %>
+    </li>
+    <%end%>
+</ul>
