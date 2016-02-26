@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+ .today_concerts{
+  float: left;
+  width: 50%;
+ }
+
+ .next_month_concerts{
+  float: left;
+  width: 50%;
+ }
+
+ .footer{
+  text-align: center;
+  color: red;
+ }

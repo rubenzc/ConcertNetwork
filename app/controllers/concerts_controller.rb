@@ -1,8 +1,8 @@
 class ConcertsController < ApplicationController
 
   def index
-    @concert = Concert.all
-
+    @today_concerts = Concert.today_concerts
+    @actual_month_concerts = Concert.actual_month_concerts
   end
 
   def new
@@ -19,6 +19,9 @@ class ConcertsController < ApplicationController
       flash[:alert] = "Something went wrong. Let's repeat the entry"
       render 'new'
     end
+  end
+
+  def edit
   end
 
   private 

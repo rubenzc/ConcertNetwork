@@ -1,12 +1,41 @@
-<ul>
-  <% @concert.each do |entry| %>
-    <li>
-      <h1><%= entry.artist %></h1>
-        Venue: <%= entry.venue %>
-        City: <%= entry.city %>m
-        Date: <%= entry.date.to_date %>
-        Price: <%= entry.price %>
-        Description: <%= entry.description %>
-    </li>
-    <%end%>
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <div class="today_concerts">
+      <h1>Today Concerts</h1>
+        <ul>
+          <% @today_concerts.each do |entry| %>
+            <li>
+              <h2><%= entry.artist %></h2>
+              Venue: <%= entry.venue %>
+              City: <%= entry.city %>m
+              Date: <%= entry.date.to_date %>
+              Price: <%= entry.price %>
+              Description: <%= entry.description %>
+            </li>
+            <%end%>
+        </ul>
+    </div>
+    <div class="next_month_concerts">
+      <h1>Next month Concerts</h1>
+        <ul>
+          <% @actual_month_concerts.each do |entry| %>
+            <li>
+              <h2><%= entry.artist %></h2>
+              Venue: <%= entry.venue %>
+              City: <%= entry.city %>m
+              Date: <%= entry.date.to_date %>
+              Price: <%= entry.price %>
+              Description: <%= entry.description %>
+            </li>
+            <%end%>
+        </ul>
+    </div>
+  </div>
+</body>
+</html>
