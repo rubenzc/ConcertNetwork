@@ -1,3 +1,18 @@
+<% if flash[:alert] %>
+  <%= flash[:alert] %>
+<% elsif flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
+<% if @concert.errors.any? %>
+  <ul>
+    <% @concert.errors.full_messages.each do |error|%>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
 <%= form_for [@concert] do |f| %>
   <%= f.label :artist %>
   <%= f.text_field :artist %>

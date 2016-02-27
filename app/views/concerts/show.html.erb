@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <div class="concert_details">
+      <h1>Concert details</h1>
+        <ul>
+            <li>
+              <h2><%= @concert.artist %></h2>
+              Venue: <%= @concert.venue %>
+              City: <%= @concert.city %>m
+              Date: <%= @concert.date.to_date %>
+              Price: <%= @concert.price %>
+              Description: <%= @concert.description %>
+              <%= link_to 'Edit', edit_concert_path(@concert.id) %>
+              <%= link_to('Delete', concert_path(@concert.id), method: :delete,data:{confirm: 'Are you sure?'}) %>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

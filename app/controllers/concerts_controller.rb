@@ -9,6 +9,10 @@ class ConcertsController < ApplicationController
     @concert = Concert.new
   end
 
+  def show
+    @concert = Concert.find params[:id]
+  end
+
   def create
     @concert = Concert.new concert_params
 
@@ -22,6 +26,24 @@ class ConcertsController < ApplicationController
   end
 
   def edit
+    @concert = Concert.find params[:id]
+  end
+
+  def update
+    @concert = Concert.find params[:id]
+
+    if @concert.update_attributes concert_params
+      redirect_to action: 'index'
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    concert = Concert.find params[:id]
+    concert.destroy
+
+    redirect_to action: 'index'
   end
 
   private 

@@ -11,7 +11,7 @@
         <ul>
           <% @today_concerts.each do |entry| %>
             <li>
-              <h2><%= entry.artist %></h2>
+              <h2><%= link_to(entry.artist, concert_path(entry.id)) %></h2>
               Venue: <%= entry.venue %>
               City: <%= entry.city %>m
               Date: <%= entry.date.to_date %>
@@ -26,7 +26,7 @@
         <ul>
           <% @actual_month_concerts.each do |entry| %>
             <li>
-              <h2><%= entry.artist %></h2>
+              <h2><%= link_to(entry.artist, concert_path(entry.id)) %></h2>
               Venue: <%= entry.venue %>
               City: <%= entry.city %>m
               Date: <%= entry.date.to_date %>
